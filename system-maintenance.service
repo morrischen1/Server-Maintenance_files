@@ -1,0 +1,9 @@
+[Unit]
+Description=Install system package updates and remove unused packages
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/system-maintenance
+TimeoutStartSec=0

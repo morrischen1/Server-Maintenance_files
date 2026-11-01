@@ -1,0 +1,10 @@
+[Unit]
+Description=Update Docker images and prune old Docker resources
+Requires=docker.service
+Wants=network-online.target
+After=docker.service network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/docker-maintenance --scheduled
+TimeoutStartSec=0

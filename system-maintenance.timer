@@ -1,0 +1,11 @@
+[Unit]
+Description=Run system maintenance daily at 02:00
+
+[Timer]
+OnCalendar=*-*-* 02:00:00
+Persistent=true
+AccuracySec=1s
+Unit=system-maintenance.service
+
+[Install]
+WantedBy=timers.target
